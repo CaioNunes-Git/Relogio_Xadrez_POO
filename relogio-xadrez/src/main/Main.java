@@ -24,12 +24,14 @@ public class Main {
         partidaUnica.realizarJogada(); //Player2
         partidaUnica.realizarJogada(); //Player1
         partidaUnica.realizarJogada(); //Player2
+        partidaUnica.getRelogio1().reiniciar();
+        //partidaUnica.getRelogio2().reiniciar();
         partidaUnica.pararPartida();
 
         System.out.println("-----------INFORMAÇÕES SOBRE A PARTIDA-----------");
         System.out.println("Hora de inicio da partida: " + partidaUnica.getHoraInicio());
         System.out.println("Hora de fim da partida: " + partidaUnica.getHoraFim());
-        System.out.println("Número total de jogadas da partida: " + partidaUnica.getNumJogadas() + "\n");
+        System.out.println("Número total de jogadas da partida: " + partidaUnica.getNumeroJogadas() + "\n");
 
         System.out.println("----------- "+jogador1.getNome()+" -----------");
         System.out.println("Tempo total que foi gasto por " + jogador1.getNome() + " foi: " + partidaUnica.getTempoGastoJogador1() + "min");

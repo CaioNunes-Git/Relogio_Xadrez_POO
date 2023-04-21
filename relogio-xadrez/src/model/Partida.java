@@ -7,7 +7,7 @@ public class Partida {
     private Jogador jogador2;
     private Relogio relogio1;
     private Relogio relogio2;
-    private int numJogadas;
+    private int numeroJogadas;
     private Date horaInicio;
     private Date horaFim;
 
@@ -16,7 +16,7 @@ public class Partida {
         this.jogador2 = jogador2;
         this.relogio1 = new Relogio(tempoMaximo);
         this.relogio2 = new Relogio(tempoMaximo);
-        this.numJogadas = 0;
+        this.numeroJogadas = 0;
         this.horaInicio = null;
         this.horaFim = null;
     }
@@ -28,18 +28,17 @@ public class Partida {
     }
 
     public void realizarJogada() {
-        // Lógica para alternar entre jogadores e decrementar o tempo do jogador da vez
         Jogador jogadorDaVez;
         Relogio relogioDaVez;
-        if (this.numJogadas % 2 == 0) {
+        if (this.numeroJogadas % 2 == 0) {
             jogadorDaVez = this.jogador1;
             relogioDaVez = this.relogio1;
         } else {
             jogadorDaVez = this.jogador2;
             relogioDaVez = this.relogio2;
         }
-        relogioDaVez.decrementarTempo(jogadorDaVez.getTempoPorJogada());
-        this.numJogadas++;
+        relogioDaVez.decrementadorTempo(jogadorDaVez.getTempoPorJogada());
+        this.numeroJogadas++;
     }
 
     public void pararPartida() {
@@ -48,8 +47,8 @@ public class Partida {
         this.relogio2.pausarContagem();
     }
 
-    public int getNumJogadas() {
-        return this.numJogadas;
+    public int getNumeroJogadas() {
+        return this.numeroJogadas;
     }
 
     public Date getHoraInicio() {
@@ -74,9 +73,6 @@ public class Partida {
     public int getTempoGastoJogador2() {
         return this.relogio2.getTempoMaximo() - this.relogio2.getTempoRestante();
     }
-
-
-
 
 }
 

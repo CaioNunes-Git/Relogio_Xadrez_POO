@@ -13,7 +13,7 @@ public class Relogio {
         this.relogioPausado = false;
     }
 
-    public synchronized void iniciarContagem() {
+    public void iniciarContagem() {
         if (!this.emAndamento || this.relogioPausado || this.tempoRestante == tempoMaximo) {
             this.emAndamento = true;
             this.relogioPausado = false;
@@ -32,32 +32,24 @@ public class Relogio {
             thread.start();
         }
     }
-    public synchronized void reiniciar() {
+    public void reiniciar() {
         this.relogioPausado = false;
         this.tempoRestante = tempoMaximo;
     }
 
-    public synchronized void pausarContagem() {
+    public void pausarContagem() {
         this.relogioPausado = true;
-    }
-
-    public synchronized boolean isEmAndamento() {
-        return emAndamento;
-    }
-
-    public synchronized boolean isRelogioPausado() {
-        return relogioPausado;
     }
 
     public int getTempoMaximo() {
         return tempoMaximo;
     }
 
-    public synchronized int getTempoRestante() {
+    public int getTempoRestante() {
         return tempoRestante;
     }
 
-    public synchronized void decrementarTempo(int tempoPorJogada) {
+    public synchronized void decrementadorTempo(int tempoPorJogada) {
         if (this.tempoRestante >= tempoPorJogada) {
             this.tempoRestante -= tempoPorJogada;
         } else {
