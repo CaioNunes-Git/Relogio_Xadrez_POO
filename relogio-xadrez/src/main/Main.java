@@ -24,7 +24,7 @@ public class Main {
         partidaUnica.realizarJogada(); //Player2
         partidaUnica.realizarJogada(); //Player1
         partidaUnica.realizarJogada(); //Player2
-        partidaUnica.getRelogio1().reiniciar();
+        //partidaUnica.getRelogio1().reiniciar();
         //partidaUnica.getRelogio2().reiniciar();
         partidaUnica.pararPartida();
 
@@ -35,10 +35,10 @@ public class Main {
 
         System.out.println("----------- "+jogador1.getNome()+" -----------");
         System.out.println("Tempo total que foi gasto por " + jogador1.getNome() + " foi: " + partidaUnica.getTempoGastoJogador1() + "min");
-        System.out.println("Tempo restante jogador 1: " + partidaUnica.getRelogio1().getTempoRestante() + "min" +"\n");
+        System.out.println("Tempo restante: " + partidaUnica.getRelogio1().getTempoRestante() + "min" +"\n");
 
         System.out.println("----------- "+jogador2.getNome()+" -----------");
         System.out.println("Tempo total que foi gasto por " + jogador2.getNome() + " foi: " + partidaUnica.getTempoGastoJogador2() + "min");
-        System.out.println("Tempo restante jogador 2: " + partidaUnica.getRelogio2().getTempoRestante() + "min");
+        System.out.println("Tempo restante: " + partidaUnica.getRelogio2().getTempoRestante() + "min");
     }
 }

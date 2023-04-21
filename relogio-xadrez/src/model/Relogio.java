@@ -49,7 +49,7 @@ public class Relogio {
         return tempoRestante;
     }
 
-    public synchronized void decrementadorTempo(int tempoPorJogada) {
+    public void decrementadorTempo(int tempoPorJogada) {
         if (this.tempoRestante >= tempoPorJogada) {
             this.tempoRestante -= tempoPorJogada;
         } else {
